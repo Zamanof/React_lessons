@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Box model</title>
+    <!-- <link rel="stylesheet" href="box-model-style.css"> -->
+    <style>
+        body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header{
+   background-color: #ff6825; 
+   text-align: center;
+   min-width: 768px;
+   min-height: 150px;
+   padding: 5% 0;
+}
+h1{
+    margin: 0;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+h2{
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    font-family: Cambria, serif;
+}
+
+header h2{
+    text-decoration: none;
+    color: #fff;
+    font-size: 3rem;
+    margin: 1.2rem;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+                 0px 8px 13px rgba(0, 0, 0, 0.1),
+                 0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+.half{
+    width: 47%;
+    padding: 1.5%;
+    float: left;
+}
+.right-block{
+    float: right;
+    padding: 15px;
+    margin-left: 10px;
+}
+.video{
+    background-color: #e02f2f;
+    width: 20px;
+    height: 20px;
+    padding: 10px 15px 10px 28px;
+    border-radius: 10px/14px;
+    cursor: pointer;
+}
+
+.play{
+   border: 10px solid transparent;
+   border-left-color: #fff;   
+}
+
+/* clearfix hack */
+.container::before, 
+.container::after{
+    content: '';
+    display: table;
+}
+.container::after{
+    clear: both;
+}
+
+.container{
+    max-width: 1200px;
+    min-width: 768px;
+    width: 90%;
+    margin: auto;
+}
+.text-center{
+    text-align: center;
+}
+
+.course{
+    width: 17%;
+    padding: 1.5%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.price{
+    text-align: right;
+    font-weight: bold;
+}
+
+.price::before{
+    content: '$ ';
+}
+
+.top{
+    background-color: #ff6825;
+    color: #fff;
+    border: 3px double #666;
+    border-top-right-radius: 20px;
+    text-align: center;
+    height: 100px;
+    padding: 15px;
+    font-family: Cambria, serif;
+}
+
+.red{
+    background-color: #900;
+}
+
+.blue{
+    background-color: #1b3d89;
+}
+.violet{
+    background-color: #5a109f;
+}
+.green{
+    background-color: #18b430;
+}
+
+.promo{
+    width: 70%;
+    background-color: #ffce00;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #222;
+    border-radius: 0 15px 15px 0;
+    padding: 5px;
+    font-weight: bold;
+    margin: -15px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    margin-top: -5px;
+}
+
+footer{
+    background-color: #ccc;
+    border-top: 3px solid #666;
+}
+
+.footer-bottom{
+    background-color: #111;
+    color: #fff;
+    border-top: 3px solid #666;
+}
+
+.col{
+    width: 30.3%;
+    padding: 1.5%;
+    float: left;
+}
+ul.unstyled{
+    list-style: none;
+    padding: 0;
+    line-height: 170%;
+}
+.text-right{
+    text-align: right;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Sample Page</h1>
+            <h2>with CSS Box model</h2>
+            <p>for students</p>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="half">
+                <h2>About Us</h2>
+                <div class="right-block">
+                    <div class="video" title="Play Video About Us">
+                        <div class="play"></div>
+                    </div>
+                </div>
+                <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id unde mollitia quas quisquam atque molestiae eos, tempore, rerum cum dolorem, ullam aperiam rem veritatis totam, nulla hic quam. Est, iste.</p>
+                <p>Deleniti, aliquam perferendis iusto fugit, a eveniet dolores maiores dignissimos ipsa tempore atque voluptate neque animi natus. Laboriosam, vitae recusandae facere corporis dolores odio voluptatem placeat at sequi! A, aliquid!</p>
+            </div>
+            <div class="half">
+                <h2>Our mission</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dicta, earum dolorem hic doloremque voluptates?</p>
+                <p>Sequi libero ipsum autem quos quod earum dolorem ipsa ad officiis. Aliquam hic est ipsam!</p>
+                <p>Odio molestias doloribus, explicabo? Optio, delectus. Adipisci expedita alias libero non repudiandae tempora, omnis veritatis.</p>
+            </div>
+        </div>
+    </section>
+    <!--    section>h2{Popular Courses}+.container>.course*5>(.top>.promo{Most popular}+h3{Developer})+(p>lorem12)+.price{19.99}-->
+    <section>
+        <h2 class="text-center">Popular Courses</h2>
+        <div class="container">
+            <div class="course">
+                <div class="top">
+                    <div class="promo">Top sales</div>
+                    <h3>The Web Developer</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius atque, saepe provident.</p>
+                <div class="price">27.99</div>
+            </div>
+            <div class="course">
+                <div class="top red">
+                    <div class="promo">New!</div>
+                    <h3>JavaScript Developer</h3>
+                </div>
+                <p>Cum nemo repellendus laborum, commodi odit deserunt minus et sunt. Minus, iste.</p>
+                <div class="price">29.99</div>
+            </div>
+            <div class="course">
+                <div class="top blue">
+                    <div class="promo">Most popular</div>
+                    <h3>FrontEnd Developer</h3>
+                </div>
+                <p>Voluptatem corporis doloremque eaque deleniti iusto odio asperiores veritatis expedita repudiandae maiores!</p>
+                <div class="price">39.99</div>
+            </div>
+            <div class="course">
+                <div class="top violet">
+                    <div class="promo">Super Sale!</div>
+                    <h3>Modern Web Design</h3>
+                </div>
+                <p>Error dolor laudantium soluta ex illo labore eius placeat aliquam deserunt, fugit.</p>
+                <div class="price">11.99</div>
+            </div>
+            <div class="course">
+                <div class="top green">
+                    <div class="promo">Most popular</div>
+                    <h3>CSS Complete Course</h3>
+                </div>
+                <p>Assumenda fugit, adipisci similique veritatis nihil quas quibusdam nisi et temporibus sed!</p>
+                <div class="price">24.99</div>
+            </div>
+        </div>
+    </section>
+    <!--    footer>(.container>.col*3>h2{Our Courses}+ul.unstyled>li*4>lorem4)+.footer-bottom>.container>.half*2>{&copy; 2018 | Simple Page Company &trade;}-->
+    <footer>
+        <div class="container">
+            <div class="col">
+                <h2>Our Courses</h2>
+                <ul class="unstyled">
+                    <li>HTML5/CSS3</li>
+                    <li>JavaScript/jQuery.</li>
+                    <li>PHP/MySql</li>
+                    <li>CMS/SEO</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h2>Our Services</h2>
+                <ul class="unstyled">
+                    <li>Group training</li>
+                    <li>Individual training</li>
+                    <li>Online training</li>
+                    <li>The latest techniques</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h2>Useful Links</h2>
+                <ul class="unstyled">
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Fugit minus vitae tenetur.</li>
+                    <li>Sunt tempora ipsam facere.</li>
+                    <li>Rerum sunt suscipit officia.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="half">&copy; 2023 | STEP Page Company &trade;</div>
+                <div class="half text-right">All rights tapdalanıb.</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>
+    DOM 1</title><style>
+        #div1{
+            border: 2px solid black;
+            height: 150px;
+            width: 400px;
+            margin: 20px;
+            padding: 15px;
+        }
+        #div2{
+            border: 1px dashed tomato;
+            height: 140px;
+            width: 200px;
+            float: right;
+            padding: 5px;
+            overflow: auto;
+        }
+    </style></head><body><div id="div1"><div id="div2"></div><h1>Header</h1><p>
+            Paragraph
+            <br><span>Span</span>
+        </p><button onclick="getStructure()">Get Structure
+        </button></div><script>
+        function getStructure() {
+            var c = document.documentElement.childNodes;
+            var message = '';
+            for(let i=0; i < c.length; i++){
+                let d = c[i];
+                message += (+i+1) + ". " + d.tagName +
+                " (" + d.nodeName + ") <br>"
+
+                if (d.hasChildNodes()){
+                    let e = d.childNodes;
+                    for (let j = 0; j < e.length; j++) {
+                        let f = e[j];
+                        message += " &nbsp; " + (+j+1) + ". " +
+                        f.tagName + " (" + f.nodeName + ") <br>";
+                        if (f.hasChildNodes()){
+                            let g = f.childNodes;
+                            for (let k = 0; k < g.length; k++) {
+                            let h = g[k];
+                            message += "  &nbsp; &nbsp; " + (+k+1) + ". " +
+                            h.tagName + " (" + h.nodeName + ") <br>";
+                        }                        
+                    }
+                }
+            }
+        }
+            window.div2.innerHTML = message;
+        }
+    </script></body></html>

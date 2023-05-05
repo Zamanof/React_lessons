@@ -5,6 +5,7 @@ import SearchPanel from "../search-panel/search-panel";
 import ItemStatusFilter from "../item-status-filter";
 
 import "./app.css"
+import ItemAddForm from "../../item-add-form";
 class App  extends Component{
     idSeed = 0
     state = {
@@ -27,6 +28,24 @@ class App  extends Component{
         }
         }
     )}
+    addItem = (text)=>{
+        const newItem ={
+            text,
+            important:false,
+            id: ++this.idSeed
+        }
+        this.setState(({todoData})=>{
+
+                const newArray = [
+                    ...todoData,
+                    newItem
+                ]
+                return{
+                    todoData: newArray
+                }
+            }
+        )
+    }
     render() {
         return (
             <div className='todo-app'>
@@ -39,6 +58,8 @@ class App  extends Component{
                     todos={this.state.todoData}
                     onDeleted={this.deleteItem}
                 />
+                <ItemAddForm
+                    onAdded={this.addItem}/>
             </div>
         );
     }

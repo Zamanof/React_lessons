@@ -3,30 +3,36 @@ import React from "react";
 import "./todo-list-item.css"
 
 class TodoListItem extends React.Component {
-    state = {
-        done: false,
-        important: false
-    }
-    onLabelClick = () => {
-        // console.log(`Done ${this.props.text}`)
-        this.setState(({done}) => {
-            return {
-                done: !done
-            }
-        })
-    }
-
-    onMarkImportant = () => {
-        this.setState(({important}) => {
-            return {
-                important: !important
-            }
-        })
-    }
+    // state = {
+    //     done: false,
+    //     important: false
+    // }
+    // onLabelClick = () => {
+    //     // console.log(`Done ${this.props.text}`)
+    //     this.setState(({done}) => {
+    //         return {
+    //             done: !done
+    //         }
+    //     })
+    // }
+    //
+    // onMarkImportant = () => {
+    //     this.setState(({important}) => {
+    //         return {
+    //             important: !important
+    //         }
+    //     })
+    // }
 
     render() {
-        const {text, onDeleted} = this.props
-        const {done, important} = this.state
+        const {
+            text,
+            onDeleted,
+            onToggleImportant,
+            onToggleDone,
+            important,
+            done
+        } = this.props
         let classNames = "todo-list-item"
         let btnBgColor = 'btn btn-outline-success btn-sm float-right'
         if (done) {
@@ -41,13 +47,13 @@ class TodoListItem extends React.Component {
             <span className={classNames}>
             <span
                 className="todo-list-item-label"
-                onClick={this.onLabelClick}
+                onClick={onToggleDone}
             >
                 {text}
             </span>
             <button type="button"
                     className={btnBgColor}
-                    onClick={this.onMarkImportant}>
+                    onClick={onToggleImportant}>
                 <i className="fa fa-exclamation"/>
             </button>
             <button type="button"

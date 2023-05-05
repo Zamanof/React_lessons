@@ -11,9 +11,9 @@ class App  extends Component{
     state = {
         todoData:
             [
-                {text: 'Wake up', important: false, id:++this.idSeed},
-                {text: 'Have breakfast', important: false, id:++this.idSeed},
-                {text: 'Make STEP IT HW\'s', important: true, id:++this.idSeed}
+                this.createTodoItem('Wake up'),
+                this.createTodoItem('Have breakfast'),
+                this.createTodoItem('Make STEP IT HW\'s')
             ]
     }
  deleteItem = (id)=>{
@@ -28,23 +28,53 @@ class App  extends Component{
         }
         }
     )}
-    addItem = (text)=>{
-        const newItem ={
+
+    createTodoItem(text){
+        return {
             text,
             important:false,
+            done: false,
             id: ++this.idSeed
         }
+    }
+    addItem = (text)=>{
+
         this.setState(({todoData})=>{
 
                 const newArray = [
                     ...todoData,
-                    newItem
+                    this.createTodoItem(text)
                 ]
                 return{
                     todoData: newArray
                 }
             }
         )
+    }
+
+    toggleProperty(arr, id, propName){
+        const idx = arr.findIndex((el)=> el.id === id);
+        const oldItem = arr[idx]
+        const newItem = {...oldItem, [propName]: !oldItem[propName]}
+        return[
+            ...arr.slice(0, idx),
+            newItem,
+            ...arr.slice(idx+1)
+        ]
+    }
+    onToggleImportant = (id)=>{
+        this.setState(({todoData})=>{
+            return{
+                todoData: this.toggleProperty(todoData, id, "important")
+            }
+        })
+    }
+    onToggleDone = (id)=>{
+        this.setState(({todoData})=>{
+            return{
+                todoData: this.toggleProperty(todoData, id, "done")
+            }
+        })
     }
     render() {
         return (
@@ -57,6 +87,8 @@ class App  extends Component{
                 <TodoList
                     todos={this.state.todoData}
                     onDeleted={this.deleteItem}
+                    onToggleImportant = {this.onToggleImportant}
+                    onToggleDone = {this.onToggleDone}
                 />
                 <ItemAddForm
                     onAdded={this.addItem}/>

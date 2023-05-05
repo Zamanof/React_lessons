@@ -5,7 +5,7 @@ import SearchPanel from "../search-panel/search-panel";
 import ItemStatusFilter from "../item-status-filter";
 
 import "./app.css"
-import ItemAddForm from "../../item-add-form";
+import ItemAddForm from "../item-add-form";
 class App  extends Component{
     idSeed = 0
     state = {

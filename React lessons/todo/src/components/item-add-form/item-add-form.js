@@ -21,7 +21,6 @@ export default class ItemAddForm extends Component {
         });
     }
     render() {
-        const {onAdded} = this.props
         return (
             <form className="item-add-form d-flex"
             onSubmit={this.onSubmit}>

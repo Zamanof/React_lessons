@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "todo",
   "version": "0.1.0",
   "private": true,
@@ -7,19 +6,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
-=======
-  "name": "hooksintro",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
->>>>>>> c6df2eac0ce19f405c9856f86ff1b02070ca2d57
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,15 +13,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-<<<<<<< HEAD
-=======
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
->>>>>>> c6df2eac0ce19f405c9856f86ff1b02070ca2d57
   "browserslist": {
     "production": [
       ">0.2%",

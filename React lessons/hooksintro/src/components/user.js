@@ -11,7 +11,7 @@ export default class User extends Component{
         })
     }
     render(){
-        const {name, salary, department} = this.props
+        const {name, salary, department} = this.props.user
         return(
             <div className="col-md-8 mx-auto mb-4">
                 <div className="card">

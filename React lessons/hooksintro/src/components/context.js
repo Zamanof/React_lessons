@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+
 const UserContext = React.createContext();
 
 export class UserProvider extends Component{

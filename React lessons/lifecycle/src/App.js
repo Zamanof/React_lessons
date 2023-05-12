@@ -16,6 +16,7 @@ function App() {
         {/*<LifeCycleMethods/>*/}
         <button onClick={()=>setSalam(salam + 1)}>Salam</button>
         <p>Salam: {salam}</p>
+        <br/>
         <p>Timer: {timer}</p>
         {/*<button onClick={()=>setTimer(timer - 1)}>Timer</button>*/}
 

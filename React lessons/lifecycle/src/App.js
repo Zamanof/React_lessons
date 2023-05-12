@@ -4,7 +4,7 @@ import {cleanup} from "@testing-library/react";
 function App() {
     const [timer, setTimer] = useState(50)
     const [salam, setSalam] = useState(50)
-    // setInterval(()=>{setTimer(timer - 1)}, 1000)
+    // setInterval(()=>{setTimer(timer - 1)}, 1000)Re
     useEffect(()=>{
         const interval =
             setInterval(()=>{setTimer(timer - 1)}, 1000)

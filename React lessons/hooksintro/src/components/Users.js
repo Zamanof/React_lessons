@@ -15,15 +15,15 @@ export default class Users extends Component {
                             <div>
                                 {
                                     users.map((user) => (
-                                        <> 
-                                        <p>{user.name}</p>
-                                        <p>{user.salary}</p>
-                                        <p>{user.department}</p>
-                                        </>
+                                        // <>
+                                        //     <p>{user.name}</p>
+                                        //     <p>{user.salary}</p>
+                                        //     <p>{user.department}</p>
+                                        // </>
                                        
-                                        // <User key={user.id}
-                                        // user={user}
-                                        // />
+                                        <User key={user.id}
+                                        user={user}
+                                        />
                                       )
                                     )
                                 }
